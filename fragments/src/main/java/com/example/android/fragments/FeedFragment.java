@@ -62,22 +62,47 @@ public class FeedFragment extends Fragment{
 			public void onCompleted(Response response) {
 				PostItem pi = new PostItem();
 //				Log.w(TAG, "" + response.toString());
+                if (response == null) {
+                    Log.e(TAG, "response is null");
+                }
+
 				try {
 					JSONArray jarry = new JSONArray();
 					jarry = response.getGraphObject().getInnerJSONObject().getJSONArray("data");
 //					for (int i = 0; i < jarry.length(); i++) {
-						Log.w(TAG, "" + jarry.getJSONObject(0).toString());
-//						Log.e(TAG, "");
-						Log.w(TAG, "" + jarry.getJSONObject(0).getString("message"));
-						pi.setFrom_id(jarry.getJSONObject(0).getJSONObject("from").getString("id"));
+
+//                    Log.w(TAG, "" + jarry.getJSONObject(0).toString());
+
+//					Log.e(TAG, "----");
+
+//					Log.wtf(TAG, "" + jarry.getJSONObject(0).getString("message"));
+
+					pi.setFrom_id(jarry.getJSONObject(0).getJSONObject("from").getString("id"));
+                    pi.setMessage(jarry.getJSONObject(0).getString("message"));
+                    pi.setType(jarry.getJSONObject(0).getString("type"));
+                    pi.setLink(jarry.getJSONObject(0).getString("link"));
+                    pi.setPicture(jarry.getJSONObject(0).getString("picture"));
+                    pi.setObject_id(jarry.getJSONObject(0).getString("object_id"));
+
+
 //					}
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+                printItem(pi);
 			}
 		}
 	).executeAsync();
 	}
 
+    private void printItem(PostItem pi) {
+        Log.wtf(TAG, "From: " + pi.getFrom_id());
+        Log.wtf(TAG, "Link: " + pi.getLink());
+        Log.wtf(TAG, "Message: " + pi.getMessage());
+        Log.wtf(TAG, "Object ID: " + pi.getObject_id());
+        Log.wtf(TAG, "Picture: " + pi.getPicture());
+        Log.wtf(TAG, "Type: " + pi.getType());
+
+    }
 }
