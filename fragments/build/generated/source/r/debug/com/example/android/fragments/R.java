@@ -222,10 +222,10 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020028;
     }
     public static final class id {
-        public static final int action_settings=0x7f050022;
+        public static final int action_settings=0x7f050027;
         public static final int article=0x7f050003;
-        public static final int button2=0x7f050020;
-        public static final int button3=0x7f050021;
+        public static final int button2=0x7f050025;
+        public static final int button3=0x7f050026;
         public static final int com_facebook_body_frame=0x7f050016;
         public static final int com_facebook_button_xout=0x7f050018;
         public static final int com_facebook_login_activity_progress_bar=0x7f050006;
@@ -251,12 +251,17 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_login_button=0x7f05001d;
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f05001b;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f05001c;
-        public static final int fragment_container=0x7f05001e;
+        public static final int fragment_container=0x7f050023;
+        public static final int imageView=0x7f050020;
         public static final int large=0x7f050002;
-        public static final int login_button=0x7f05001f;
+        public static final int login_button=0x7f050024;
         public static final int normal=0x7f050001;
         public static final int picker_subtitle=0x7f050013;
+        public static final int relativelayout=0x7f05001e;
         public static final int small=0x7f050000;
+        public static final int textView=0x7f05001f;
+        public static final int textView2=0x7f050021;
+        public static final int textView3=0x7f050022;
     }
     public static final class layout {
         public static final int article_view=0x7f030000;
@@ -275,8 +280,11 @@ containing a value of this type.
         public static final int com_facebook_search_bar_layout=0x7f03000d;
         public static final int com_facebook_tooltip_bubble=0x7f03000e;
         public static final int com_facebook_usersettingsfragment=0x7f03000f;
-        public static final int main_menu=0x7f030010;
-        public static final int news_articles=0x7f030011;
+        public static final int feed_fragment=0x7f030010;
+        public static final int item_in_list=0x7f030011;
+        public static final int list_items=0x7f030012;
+        public static final int main_menu=0x7f030013;
+        public static final int news_articles=0x7f030014;
     }
     public static final class menu {
         public static final int main=0x7f090000;
