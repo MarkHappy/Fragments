@@ -105,7 +105,7 @@ public class FeedFragment extends ListFragment {
     }
 
     private void setupAdapter() {
-        adapter = new ItemListAdapter(getActivity().getBaseContext(), piList);
+        adapter = new ItemListAdapter(getActivity(), piList);
         setListAdapter(adapter);
 
         ListView listView = getListView();
@@ -119,31 +119,59 @@ public class FeedFragment extends ListFragment {
     }
 
     private void parseResponse (Response response) {
+        JSONObject jObject = null;
+
         try {
-            JSONArray jarry = response.getGraphObject().getInnerJSONObject().getJSONArray("data");
-            for (int i = 0; i < jarry.length(); i++) {
+            JSONArray jArray = response.getGraphObject().getInnerJSONObject().getJSONArray("data");
+            for (int i = 0; i < jArray.length(); i++) {
                 PostItem pi = new PostItem();
-                JSONObject jObject = jarry.getJSONObject(i);
+                jObject = jArray.getJSONObject(i);
 
                 pi.setType(jObject.getString("type"));
                 if (pi.getType().equals("photo")) {
-                    Log.w(TAG, "picture");
                     pi.setObject_id(jObject.getString("object_id"));
                     pi.setLink(jObject.getString("link"));
                     pi.setPicture(jObject.getString("picture"));
-                    Log.w(TAG, "" + pi.getPicture());
+                }
+
+                if (pi.getType().equals("video")) {
+                    pi.setObject_id(jObject.getString("object_id"));
+                    pi.setLink(jObject.getString("link"));
+                    pi.setPicture(jObject.getString("picture"));
+                    pi.setSource(jObject.getString("source"));
                 }
 
                 pi.setFrom_id(jObject.getJSONObject("from").getString("id"));
-                pi.setMessage(jObject.getString("message"));
-                pi.setStatus_type(jObject.getString("status_type"));
+                if (jObject.toString().contains("message")) {
+                    pi.setMessage(clearNameFromMessage(jObject.getString("message")));
+                } else {
+                    pi.setMessage("");
+                }
+
+                if (jObject.toString().contains("status_type")) {
+                    pi.setStatus_type(jObject.getString("status_type"));
+                } else {
+                    pi.setStatus_type("");
+                }
 
                 piList.add(pi);
 //                Log.w(TAG, jObject.toString());
-//                Log.wtf(TAG, "----------------------");
+                Log.wtf(TAG, "----------------------");
             }
         } catch (JSONException e) {
             Log.wtf(TAG, "" + e);
+            Log.wtf(TAG, "" + jObject.toString());
         }
     }
+
+    private String clearNameFromMessage(String message) {
+        int i = message.indexOf("\n\n");
+        if (i > 0) {
+            return message.substring(0, i);
+        }
+        Log.w(TAG, "index of n is: " + i);
+        Log.w(TAG, "Message is: " + message);
+        return message;
+    }
+
 }

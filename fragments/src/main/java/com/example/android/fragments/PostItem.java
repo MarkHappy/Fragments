@@ -12,6 +12,7 @@ public class PostItem {
 	private String status_type;
 	private String created_time;
 	private String comments;
+    private String source;
 	
 	public String getObject_id() {
 		return object_id;
@@ -55,6 +56,13 @@ public class PostItem {
 	public void setStatus_type(String status_type) {
 		this.status_type = status_type;
 	}
-	
-	
+
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
 }

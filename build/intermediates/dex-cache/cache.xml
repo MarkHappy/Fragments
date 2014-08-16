@@ -6,7 +6,7 @@
         jar="C:\Users\Admin\Android studioProjects\Fragments\fragments\build\intermediates\exploded-aar\Fragments\facebookSDK\unspecified\classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="975b9df0b18b40f19e87a306a98910a79d0e7eca"/>
+        sha1="bb48a7ef1c974df8ac7534b9ebe7efc5e2a50a79"/>
     <item
         dex="C:\Users\Admin\Android studioProjects\Fragments\fragments\build\intermediates\pre-dexed\debug\support-v4-19.0.1-e6e4f6da48f765181acb3b9174ab1f0741bf3301.jar"
         jar="C:\Users\Admin\android-sdks\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
@@ -18,6 +18,12 @@
         jar="C:\Users\Admin\Android studioProjects\Fragments\fragments\build\intermediates\exploded-aar\Fragments\bolts\unspecified\classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="34254666fa59b91464e7c17d4bcc99cec7df56f6"/>
+        sha1="ea8feaa1818de38f2099be1ac44dbb5dfac2c4c7"/>
+    <item
+        dex="C:\Users\Admin\Android studioProjects\Fragments\fragments\build\intermediates\pre-dexed\debug\picasso-2.3.3-86d6a972661c061b7c52a639e7c89b698f1d332c.jar"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.3.3\1262995965440e28ba5c4d480c9c9ab4ccce84cc\picasso-2.3.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="1262995965440e28ba5c4d480c9c9ab4ccce84cc"/>
 
 </pre-dex-items>
